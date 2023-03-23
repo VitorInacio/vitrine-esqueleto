@@ -80,9 +80,9 @@
                 // essa é uma maneira diferente de fazer a mesma coisa
                 $pag = explode("/", $_GET["param"]);
 
-                $pasta = $page[0] ?? NULL;
-                $pagina = $page[1] ?? NULL;
-                $id = $page[2] ?? NULL;
+                $pasta = $pag[0] ?? NULL;
+                $pagina = $pag[1] ?? NULL;
+                $id = $pag[2] ?? NULL;
 
                 $pag = "{$pasta}/{$pagina}";
             }
