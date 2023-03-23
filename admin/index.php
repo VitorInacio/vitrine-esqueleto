@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require "../config.php";
 ?>
 
@@ -58,8 +59,44 @@
 <body id="page-top">
     <?php
         require "funcoes.php";
+        
 
-        require "paginas/login.php";
+        if (!isset($_SESSION["usuario"])) {
+            require "paginas/login.php";
+        }else {
+            
+            require "header.php";
+
+            if ( isset($_GET["param"]) ) {
+                /*
+                -- $pag recebe o valor
+                $pag = $_GET["param"];
+                -- esse transforma em array
+                $p = explode("/", $pag);
+                -- esse pega o valor 0 do array
+                $pag = $p[0];
+                */
+
+                // essa é uma maneira diferente de fazer a mesma coisa
+                $pag = explode("/", $_GET["param"]);
+
+                $pasta = $page[0] ?? NULL;
+                $pagina = $page[1] ?? NULL;
+                $id = $page[2] ?? NULL;
+
+                $pag = "{$pasta}/{$pagina}";
+            }
+
+            //$pag = "paginas/{$pag}.php";
+            
+            if (file_exists("{$pag}.php")) {
+                require "{$pag}.php";
+            }else {
+                require "paginas/erro.php";
+            };
+
+            require "footer.php";
+        }
     ?>
 </body>
 </html>
