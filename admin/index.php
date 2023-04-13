@@ -68,16 +68,7 @@
             require "header.php";
 
             if ( isset($_GET["param"]) ) {
-                /*
-                -- $pag recebe o valor
-                $pag = $_GET["param"];
-                -- esse transforma em array
-                $p = explode("/", $pag);
-                -- esse pega o valor 0 do array
-                $pag = $p[0];
-                */
-
-                // essa é uma maneira diferente de fazer a mesma coisa
+                
                 $pag = explode("/", $_GET["param"]);
 
                 $pasta = $pag[0] ?? NULL;
@@ -87,7 +78,6 @@
                 $pag = "{$pasta}/{$pagina}";
             }
 
-            //$pag = "paginas/{$pag}.php";
             
             if (file_exists("{$pag}.php")) {
                 require "{$pag}.php";
