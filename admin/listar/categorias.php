@@ -28,8 +28,15 @@
                         <td><?=$dado->nome?></td>
 
                         <td>
-                            <a href="salvar/categorias.php?id=<?=$dado->id?>" class="btn btn-danger">excluir</a>
-                            <a href="salvar/categorias.php?id=<?=$dado->id?>" class="btn btn-warning">alterar</a>
+                            <a href="salvar/categorias/<?=$dado->id?>">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            
+                            <a href="salvar/categorias/<?=$dado->id?>">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+
+                            
                         </td>
                     </tr>
                     <?php

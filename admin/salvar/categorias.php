@@ -4,6 +4,7 @@
         //Está pegando o valor do "i"d" e do "nome" que o usuário escreveu o formulário
         $id = $_POST["id"] ?? NULL;
         $nome = $_POST["nome"] ?? NULL;
+        $exc =
 
         //validar, se o nome for vazio lança uma mensagem de erro
         if(empty($nome)){
@@ -37,6 +38,8 @@
             $consulta->bindParam(":id", $id);
 
         //Se o usuário não colocou valor no id, ele vai executar esse código do else, que no caso, está adicionando uma nova categoria no banco de dados
+        }else if (!empty($id) && isset) {
+
         }else {
 
             $sql = "insert into categoria (nome) values (:nome)";
