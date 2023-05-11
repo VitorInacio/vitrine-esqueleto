@@ -28,13 +28,11 @@
                         <td><?=$dado->nome?></td>
 
                         <td>
-                            <a href="salvar/categorias/<?=$dado->id?>">
+                            <a href="cadastros/categorias/<?=$dado->id?>" class="btn btn-success">
                                 <i class="fas fa-edit"></i>
                             </a>
                             
-                            <a href="salvar/categorias/<?=$dado->id?>">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
+                            
 
                             
                         </td>
